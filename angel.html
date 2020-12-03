@@ -56,11 +56,11 @@
             "
     >
         <div style="width: 50%; float: left;">
-            <img style="float:left" src="img/santander/naturo.jpg" alt="">      
+            <img id='myPic' style="float:left;padding-right: 10px" src="img/santander/naruto_1.jpg" alt="">      
         </div>
         <div style="width: 50%;">
             <p>
-                Mi anime favorito es Naturo ya que lo veía desde que era muy pequeño
+                Mi anime favorito es Naturo ya que lo veía desde que era muy pequeño, la imagen de la derecha cambia y se mueve de izquierda a derecha al poner el ratón sobre ella.
             </p>
         </div>
     </div>
@@ -79,11 +79,13 @@
     >
         <div style="width: 50%;">
             <p>
-                Mi cantante favorita es Ariana grande
+                Mi cantante favorita es Ariana grande, la iamgen de la derecha rota al poner el mouse sobre ella.
             </p>
         </div>
-        <div style="width: 50%">
-            <img style="float:right; width: 400px" src="img/santander/ag_albums.png" alt="">      
+        <div 
+            style="width: 50%">
+            <img id="ag" style="float:right; width: 400px;transform: rotate(0deg);"
+            src="img/santander/ag_albums.png" alt="">   
         </div>
     </div>
 
@@ -106,6 +108,14 @@
                 Mi serie favorita es vikings
             </p>
         </div>
+    </div>
+
+    <div class="container-default">
+
+        <p>Mi distribucíón favorita del linux es Manjaro, la llevo utilizando desde que comencé la carrera 
+            porque es muy amigable con el usuario, la animación del color de fondo del logo fue realizada con css
+        </p>
+        <img style="animation-name: cambiar_color;animation-duration: 4s;animation-iteration-count: infinite; width: 15%;" src="img/santander/manjaro.png" alt="">
     </div>
 
     <div id="parallax-bottom" class="parallax-container">
@@ -138,5 +148,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="app.js"></script>
+<script type="text/javascript">
+    var img_num = 1;
+    var miPic = document.getElementById("myPic");
+    miPic.addEventListener("mouseover", function(){
+        if (miPic.style.float=='right'){
+            miPic.style.float='left';
+        }else{
+            miPic.style.float='right';
+        }
+        if (img_num<3){
+            img_num+=1;
+        }
+        else{
+            img_num=1;
+        }
+        miPic.src=`img/santander/naruto_${img_num}.jpg`;
+        console.log(miPic.style.float);
+    });
+
+    var ariana = document.getElementById("ag");
+    var angle = 0;
+    ariana.addEventListener("mouseover", function(){
+        angle = (angle + 90);
+        console.log(angle);
+        ariana.style.transform = `rotate(${angle}deg)`;
+        console.log(ariana.style.transform);
+    });
+
+</script>
 </body>
 </html>
