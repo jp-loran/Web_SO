@@ -44,7 +44,7 @@ nav{
     height: 400px;
 }
 
-  .container-default{
+.container-default{
     width: 70%;
     margin: 0 auto;
     text-align: center;
@@ -110,4 +110,11 @@ h5{
     font-family: 'Prompt', sans-serif;
     font-weight: lighter;
     font-size: 1em;
+}
+@keyframes cambiar_color {
+  0%   {background-color:red;}
+  25%  {background-color:yellow;}
+  50%  {background-color:blue;}
+  75%  {background-color:green;}
+  100% {background-color:red;}
 }
